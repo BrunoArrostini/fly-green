@@ -2,18 +2,22 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-header{
-  height: 50px;
-  width: 100%;
-  background-color: #A2D9CE;
+ header{
+  position: sticky;
+  top: 5px;
+  left: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+ }
 
 header > p{
   font-size: 30px;
-  color: white;
+  color: #A2D9CE;
+  font-family: 'Bruno Ace SC', cursive;
+  text-shadow: 0 2px 4px  black;
+}
+
+label{
+  font-size: 12px;
   font-family: 'Bruno Ace SC', cursive;
 }

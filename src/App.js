@@ -1,12 +1,13 @@
 import './App.css';
-import {TbPlaneTilt} from "react-icons/tb"
 import Main from './components/Main';
+import {TbPlaneTilt} from 'react-icons/tb'
 
 function App() {
   return (
     <div className="App">
-      <header><p>Fly Green</p><TbPlaneTilt style={{fontSize:"30px", color:"green"}}/></header>
+      <header><p>Fly Green</p><TbPlaneTilt style={{fontSize:"30px", color:"gray"}}/></header>
       <Main/>
+      <footer style={{textAlign:"center", fontWeight:"700"}}>Bruno Arrostini</footer>
     </div>
   );
 }

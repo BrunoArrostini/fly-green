@@ -2,60 +2,90 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 width: 100%;
-min-height: 60vh;
+min-height: 90vh;
 display: flex;
 justify-content: center;
-flex-direction: column;
 align-items: center;
-position: relative;
 `;
 
 export const Container = styled.div`
 border: 2px solid #A2D9CE;
 border-radius: 10px;
-position: absolute;
-top: 50%;
-width: 80%;
-margin: auto;
+display: flex;
+justify-content: center;
+flex-direction: column;
+padding: 30px 10px ;
+box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
+            rgba(0, 0, 0, 0.22) 0px 10px 10px;
 `;
 
 export const Title = styled.h1`
 font-size: 25px;
+text-align: center;
+font-family: 'Bruno Ace SC', cursive;
 `;
 
 export const TripWrapper = styled.div`
 display: flex;
-margin: 15px;
+margin-top: 20px;
+width: 300px;
+margin-bottom: 20px;
 `;
 
 export const OneWay = styled.button`
 width: 50%;
+margin-right: 20px;
+background-color: white;
+box-shadow: #A2D9CE 0px 3px 4px;
+border: none;
+cursor: pointer;
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+&:hover{
+    background-color: #A2D9CE;
+    box-shadow: gray 0px 3px 4px;
+}
 `;
 
 export const Roundtrip = styled.button`
 width: 50%;
+padding: 10px;
+background-color: white;
+box-shadow: #A2D9CE 0px 3px 4px;
+border: none;
+cursor: pointer;
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+&:hover{
+    background-color: #A2D9CE;
+    box-shadow: gray 0px 3px 4px;
+}
 `;
 
 export const FormContainer = styled.div`
 display: flex;
 justify-content: center;
-flex-direction: column;
 `;
 
 export const Form = styled.form`
-display: flex;
-justify-content: center;
-flex-direction: column;
+display: block;
 `;
 
 export const Departure = styled.input`
-
+margin-bottom: 20px;
+margin-left: 20px;
+width: 200px;
+align-items: flex-start;
 `;
 
 export const Destination = styled.input`
-
+margin-bottom: 20px;
+margin-left: 15px;
+width: 200px;
 `;
 
-export const PassengerCounter = styled.input`
+export const PassengerCounter = styled.select`
+margin-left: 14px;
+width: 40px;
 
 `;

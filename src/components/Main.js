@@ -5,16 +5,24 @@ const Main = () => {
   return (
     <Wrapper>
       <Container>
-        <Title>Your trip details</Title>
+        <Title>Trip details</Title>
         <TripWrapper>
-          <OneWay></OneWay>
-          <Roundtrip></Roundtrip>
+          <OneWay>One way</OneWay>
+          <Roundtrip>Roundtrip</Roundtrip>
         </TripWrapper>
         <FormContainer>
            <Form>
+             <label htmlFor="departure">Departure</label>
              <Departure></Departure>
+             <br/>
+             <label htmlFor="destination">Destination</label>
              <Destination></Destination>
-             <PassengerCounter></PassengerCounter>
+             <br/>
+             <label htmlFor="passengers">Passengers</label>
+             <PassengerCounter 
+             type="select"
+             ></PassengerCounter>
+             <br/>
            </Form>
         </FormContainer>
       </Container>
