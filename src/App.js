@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header><p>Fly Green</p><TbPlaneTilt style={{fontSize:"30px", color:"gray"}}/></header>
       <Main/>
-      <footer style={{textAlign:"center", fontWeight:"700"}}>Bruno Arrostini</footer>
+      <footer style={{textAlign:"center", fontSize:"12px", fontFamily:"Bruno Ace SC, cursive"}}>Bruno Arrostini</footer>
     </div>
   );
 }

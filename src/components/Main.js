@@ -1,14 +1,24 @@
 import React from 'react'
+import "../App.css"
 import { Wrapper, Container, Title, TripWrapper, OneWay, Roundtrip, Form, Departure, Destination, PassengerCounter, FormContainer} from './styles/main.styled' 
 
-const Main = () => {
+const Main = (props) => {
+
+  const [oneWayisHeld, setOneWayIsHeld] = React.useState(true)
+  const [roundTripIsHeld, setRoundTripIsHeld] = React.useState(false)
+
+  const holdButton = () => {
+    setOneWayIsHeld(oneWayisHeld => !oneWayisHeld);
+    setRoundTripIsHeld(roundTripIsHeld => !roundTripIsHeld)
+  };
+
   return (
     <Wrapper>
       <Container>
         <Title>Trip details</Title>
         <TripWrapper>
-          <OneWay>One way</OneWay>
-          <Roundtrip>Roundtrip</Roundtrip>
+          <OneWay onClick={holdButton} className={oneWayisHeld ? "held" : "no-held"}>One way</OneWay>
+          <Roundtrip onClick={holdButton} className={roundTripIsHeld ? "held" : "no-held"} >Roundtrip</Roundtrip>
         </TripWrapper>
         <FormContainer>
            <Form>
@@ -20,7 +30,6 @@ const Main = () => {
              <br/>
              <label htmlFor="passengers">Passengers</label>
              <PassengerCounter 
-             type="select"
              ></PassengerCounter>
              <br/>
            </Form>

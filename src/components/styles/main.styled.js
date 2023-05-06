@@ -9,14 +9,16 @@ align-items: center;
 `;
 
 export const Container = styled.div`
+background-color: white;
 border: 2px solid #A2D9CE;
 border-radius: 10px;
 display: flex;
 justify-content: center;
 flex-direction: column;
-padding: 30px 10px ;
+padding: 45px 25px ;
 box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
             rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            
 `;
 
 export const Title = styled.h1`
@@ -33,33 +35,12 @@ margin-bottom: 20px;
 `;
 
 export const OneWay = styled.button`
-width: 50%;
-margin-right: 20px;
-background-color: white;
-box-shadow: #A2D9CE 0px 3px 4px;
-border: none;
-cursor: pointer;
-font-family: Georgia, 'Times New Roman', Times, serif;
 
-&:hover{
-    background-color: #A2D9CE;
-    box-shadow: gray 0px 3px 4px;
-}
 `;
 
-export const Roundtrip = styled.button`
-width: 50%;
-padding: 10px;
-background-color: white;
-box-shadow: #A2D9CE 0px 3px 4px;
-border: none;
-cursor: pointer;
-font-family: Georgia, 'Times New Roman', Times, serif;
 
-&:hover{
-    background-color: #A2D9CE;
-    box-shadow: gray 0px 3px 4px;
-}
+export const Roundtrip = styled.button`
+
 `;
 
 export const FormContainer = styled.div`
@@ -84,7 +65,7 @@ margin-left: 15px;
 width: 200px;
 `;
 
-export const PassengerCounter = styled.select`
+export const PassengerCounter = styled.input`
 margin-left: 14px;
 width: 40px;
 
