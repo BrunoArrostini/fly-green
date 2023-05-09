@@ -64,9 +64,10 @@ width: 200px;
 `;
 
 export const PassengerCounter = styled.input`
-margin-left: 14px;
+margin-left: 145px;
 width: 40px;
 margin-bottom: 20px;
+font-family: 'Bruno Ace SC', cursive;
 `;
 
 export const Btn = styled.button`
