@@ -1,20 +1,20 @@
 import React from 'react'
 import "../../App.css"
 import { Wrapper, Container, Title, TripWrapper, OneWay, Roundtrip, Form, Departure, Destination, PassengerCounter, FormContainer, Btn} from './main.styled' 
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState } from 'react'
+//import axios from 'axios'
 import codes from "../../airport.json"
 
 const Main = () => {
 
   const [oneWayisHeld, setOneWayIsHeld] = useState(true);
   const [roundTripIsHeld, setRoundTripIsHeld] = useState(false);
-  const [segment, setSegment] = useState(1);
+  //const [segment, setSegment] = useState(1);
 
   const holdButton = () => {
     setOneWayIsHeld(oneWayisHeld => !oneWayisHeld);
     setRoundTripIsHeld(roundTripIsHeld => !roundTripIsHeld);
-    setSegment(oneWayisHeld ? 0 : 1);
+    //setSegment(oneWayisHeld ? 0 : 1);
   };
 
   //const fetchFootprint = async () => {
