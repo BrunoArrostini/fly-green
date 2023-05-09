@@ -6,6 +6,7 @@
 .App{
   background-color: rgb(243, 237, 237);
   min-height: 100vh;
+  font-family: 'Bruno Ace SC', cursive;
 }
 
  header{
@@ -19,13 +20,11 @@
 header > p{
   font-size: 30px;
   color: #A2D9CE;
-  font-family: 'Bruno Ace SC', cursive;
   text-shadow: 0 2px 4px  black;
 }
 
 label{
   font-size: 12px;
-  font-family: 'Bruno Ace SC', cursive;
 }
 
 .held{
