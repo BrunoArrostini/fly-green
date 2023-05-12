@@ -42,32 +42,50 @@ color: black;
 `;
 
 export const FormContainer = styled.div`
-display: flex;
+display: block;
 justify-content: center;
 `;
 
 export const Form = styled.form`
-display: block;
 `;
 
 export const Departure = styled.select`
-margin-bottom: 20px;
-margin-left: 20px;
-width: 200px;
-align-items: flex-start;
+display: block;
+justify-content: center;
+align-items: center;
+margin-bottom: 15px;
+width: 300px;
+font-size: 12px;
+color: black;
+background-color: white;
+border: none;
+letter-spacing: 1.15pt;
+font-family: 'Bruno Ace SC', cursive;
 `;
 
 export const Destination = styled.select`
-margin-bottom: 20px;
-margin-left: 15px;
-width: 200px;
+display: block;
+justify-content: center;
+align-items: center;
+margin-bottom: 15px;
+width: 300px;
+font-size: 12px;
+color: black;
+background-color: white;
+border: none;
+letter-spacing: 1.15pt;
+font-family: 'Bruno Ace SC', cursive;
 `;
 
-export const PassengerCounter = styled.input`
+export const PassengerCounter = styled.select`
 margin-left: 145px;
 width: 40px;
 margin-bottom: 20px;
 font-family: 'Bruno Ace SC', cursive;
+font-size: 10px;
+color: black;
+background-color: white;
+border: none;
 `;
 
 export const Btn = styled.button`

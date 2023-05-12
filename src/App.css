@@ -29,7 +29,6 @@ label{
 
 .held{
   width: 50%;
-  margin-right: 20px;
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -41,7 +40,6 @@ label{
 
 .no-held{
   width: 50%;
-  margin-right: 20px;
   padding: 10px;
   background-color: white;
   box-shadow: #A2D9CE 0px 3px 4px;

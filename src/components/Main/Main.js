@@ -1,15 +1,42 @@
 import React from 'react'
 import "../../App.css"
 import { Wrapper, Container, Title, TripWrapper, OneWay, Roundtrip, Form, Departure, Destination, PassengerCounter, FormContainer, Btn} from './main.styled' 
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 //import axios from 'axios'
 import codes from "../../airport.json"
+import { useFormik } from 'formik'
+import { useNavigate } from 'react-router-dom'
+
 
 const Main = () => {
 
   const [oneWayisHeld, setOneWayIsHeld] = useState(true);
   const [roundTripIsHeld, setRoundTripIsHeld] = useState(false);
   //const [segment, setSegment] = useState(1);
+  const [passeng, setPasseng] = useState([]);  
+  
+  const navigate = useNavigate();
+
+  const formik = useFormik({
+    initialValues:{
+      departure:"",
+      destination:"",
+      passnum:""
+    },
+    onSubmit: values=>{
+      navigate(+values.departure + values.destination)
+    }
+  })
+
+  const pass = []
+  for(let i = 0; i <= 300; i ++){
+    pass.push(i);
+  }
+
+  useEffect(()=>{
+    setPasseng(pass)
+    // eslint-disable-next-line
+  },[])
 
   const holdButton = () => {
     setOneWayIsHeld(oneWayisHeld => !oneWayisHeld);
@@ -32,29 +59,35 @@ const Main = () => {
           <Roundtrip onClick={holdButton} className={roundTripIsHeld ? "held" : "no-held"} >Roundtrip</Roundtrip>
         </TripWrapper>
         <FormContainer>
-           <Form>
+           <Form onSubmit={formik.handleSubmit}>
              <label htmlFor="departure">Departure</label>
-             <Departure> 
-                {codes.map(code =>{
-                  return(
-                    <option value={code.code}>{code.city} ({code.country})</option>
-                  )
-                })}
-             </Departure>
+             <Departure
+             name="departure"
+             value={formik.values.departure}
+             onChange={formik.handleChange}
+             >
+              {codes.map((code=> <option value={code.code}>{code.city} ({code.country})</option>))}
+             </Departure>  
              <br/>
              <label htmlFor="destination">Destination</label>
-             <Destination>
-             {codes.map(code =>{
-                  return(
-                    <option value={code.code}>{code.city} ({code.code})</option>
-                  )
-                })}
+             <Destination
+             name="passnum"
+             value={formik.values.passnum}
+             onChange={formik.handleChange}
+             >
+              {codes.map((code=> <option value={code.code}>{code.city} ({code.country}) </option>))}
              </Destination>
              <br/>
              <label htmlFor="passengers">Passengers nr.</label>
-             <PassengerCounter ></PassengerCounter>
+             <PassengerCounter
+             name="passnum"
+             value={formik.values.passnum}
+             onChange={formik.handleChange}
+             > 
+             {passeng.map((pas=> <option value={pas}>{pas}</option>))}
+             </PassengerCounter>
              <br/>
-             <Btn>Calculate Footprint</Btn>
+             <Btn onClick={formik.handleSubmit}>Calculate Footprint</Btn>
            </Form>
         </FormContainer>
       </Container>
