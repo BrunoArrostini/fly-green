@@ -2,10 +2,9 @@ import React from 'react'
 import "../../App.css"
 import { Wrapper, Container, Title, TripWrapper, OneWay, Roundtrip, Form, Departure, Destination, PassengerCounter, FormContainer, Btn} from './main.styled' 
 import { useState, useEffect} from 'react'
-//import axios from 'axios'
 import codes from "../../airport.json"
 import { useFormik } from 'formik'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 
 
 const Main = () => {
@@ -24,7 +23,7 @@ const Main = () => {
       passnum:""
     },
     onSubmit: values=>{
-      navigate(+values.departure + values.destination)
+      navigate("/results/" + values)
     }
   })
 
@@ -34,7 +33,7 @@ const Main = () => {
   }
 
   useEffect(()=>{
-    setPasseng(pass)
+    setPasseng(pass);
     // eslint-disable-next-line
   },[])
 
@@ -43,12 +42,6 @@ const Main = () => {
     setRoundTripIsHeld(roundTripIsHeld => !roundTripIsHeld);
     //setSegment(oneWayisHeld ? 0 : 1);
   };
-
-  //const fetchFootprint = async () => {
-   // const res = await axios.get(`https://api.goclimate.com/v1/flight_footprint/YOUR_API_KEY:${process.env.REACT_APP_API_KEY}/'segments[${segment}][origin]=${Departure}'/'segments[${segment}][destination]=${Destination}`)
-    //console.log(res.data.code)
-  //}
-
  
   return (
     <Wrapper>
@@ -71,8 +64,8 @@ const Main = () => {
              <br/>
              <label htmlFor="destination">Destination</label>
              <Destination
-             name="passnum"
-             value={formik.values.passnum}
+             name="destination"
+             value={formik.values.destination}
              onChange={formik.handleChange}
              >
               {codes.map((code=> <option value={code.code}>{code.city} ({code.country}) </option>))}
@@ -87,7 +80,7 @@ const Main = () => {
              {passeng.map((pas=> <option value={pas}>{pas}</option>))}
              </PassengerCounter>
              <br/>
-             <Btn onClick={formik.handleSubmit}>Calculate Footprint</Btn>
+             <Btn onSubmit={formik.handleSubmit}>Calculate Footprint</Btn>
            </Form>
         </FormContainer>
       </Container>
