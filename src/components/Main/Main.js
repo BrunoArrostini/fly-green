@@ -23,7 +23,7 @@ const Main = () => {
       passnum:""
     },
     onSubmit: values=>{
-      navigate("/results/" + values)
+      console.log(values)
     }
   })
 
