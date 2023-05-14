@@ -9,8 +9,6 @@ const Results = () => {
     const param = useParams();
     //const [info, setInfo] = useState([])
 
-    console.log(process.env.REACT_APP_API_KEY);
-
     const fetchFootprint = async (departure, destination) => {
         try{
             //setLoading(true);

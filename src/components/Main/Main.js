@@ -4,7 +4,7 @@ import { Wrapper, Container, Title, TripWrapper, OneWay, Roundtrip, Form, Depart
 import { useState, useEffect} from 'react'
 import codes from "../../airport.json"
 import { useFormik } from 'formik'
-import { useNavigate} from 'react-router-dom'
+//import { useNavigate} from 'react-router-dom'
 
 
 const Main = () => {
@@ -14,7 +14,7 @@ const Main = () => {
   //const [segment, setSegment] = useState(1);
   const [passeng, setPasseng] = useState([]);  
   
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues:{
