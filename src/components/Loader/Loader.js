@@ -22,8 +22,9 @@ export default function LinearDeterminate() {
   }, []);
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '50%' }}>
       <LinearProgress variant="determinate" value={progress} />
+      <p>Loading...</p>
     </Box>
   );
 }

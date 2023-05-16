@@ -27,7 +27,7 @@ const Main = () => {
       passnum:""
     },
     onSubmit: values=>{
-      navigate("/results/" + values.departure + values.destination + values.passnum + segment)
+      navigate("/results/" + values.departure + values.destination + segment + values.passnum)
     }
   })
 

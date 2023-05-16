@@ -10,18 +10,18 @@ const ResList = ({price, footprintPerson, footprintGroup}) => {
     <Wrapper>
         <Box>
             <IconWrap> <AirplanemodeActiveIcon /></IconWrap>
-            <TitleWrap> <p>Footprint (per person)</p> </TitleWrap>
-            <InfoWrap> <p>{footprintPerson}</p> <Co2Icon /></InfoWrap>
+            <TitleWrap> <p>Footprint (passenger)</p> </TitleWrap>
+            <InfoWrap> <p>{footprintPerson}Kg</p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap>
         </Box>
         <Box>
             <IconWrap> <AirplanemodeActiveIcon /> </IconWrap>
             <TitleWrap> <p>Footprint (total)</p> </TitleWrap>
-            <InfoWrap> <p>{footprintGroup} <Co2Icon /> </p> </InfoWrap>
+            <InfoWrap> <p>{footprintGroup}Kg </p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap>
         </Box>
         <Box>
             <IconWrap> <PaidIcon /> </IconWrap>
             <TitleWrap> <p>Price</p> </TitleWrap>
-            <InfoWrap> <p>{price}</p> <AttachMoneyIcon style={{fontSize:"20px"}}/></InfoWrap>
+            <InfoWrap> <p>{price}</p> <AttachMoneyIcon style={{fontSize:"20px", color:"rgb(87, 86, 86)"}}/></InfoWrap>
         </Box>
     </Wrapper>
     

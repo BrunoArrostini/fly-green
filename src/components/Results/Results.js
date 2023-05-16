@@ -3,12 +3,13 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ResList from '../ResList/ResList'
-import {Container, InfoBox, Info} from './results.styled'
+import {Container, InfoBox, Info, Wrapper} from './results.styled'
+import Loader from "../Loader/Loader"
 
 const Results = () => {
 
     const param = useParams();
-    //const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [footprint, setFootprint] = useState([]);
     const [price, setPrice] = useState([])
 
@@ -16,7 +17,7 @@ const Results = () => {
     
     const fetchFootprint = async () => {
     try{
-        //setLoading(true);
+        setLoading(true);
         const res = await axios.get(`https://api.goclimate.com/v1/flight_footprint?segments[0][origin]=${param.result.substring(0,3)}&segments[0][destination]=${param.result.substring(3,6)}&segments[1][origin]=${param.result.substring(3,6)}&segments[1][destination]=${param.result.substring(0,3)}&cabin_class=economy&currencies[]=USD`, {
           auth: {
             username: APP_KEY
@@ -24,13 +25,13 @@ const Results = () => {
         });
         const infos = res.data
         const prices = res.data.offset_prices[0]
-        //setLoading(false);
+        setLoading(false);
         console.log(infos)
         setFootprint(infos)
         setPrice(prices)
     }
     catch(err){
-        //setLoading(false);
+        setLoading(false);
         console.log(err);
         return <p>Please retry later...</p>
     }
@@ -43,13 +44,16 @@ const Results = () => {
      
   return (
     <Container>
-        <InfoBox>
-            <Info>
-                <h2>Flight details: <br/> {param.result.substring(0,3)} - {param.result.substring(3,6)}</h2>
-                <p>Passenger number: {param.result.at(6)}</p>
-            </Info>
-        </InfoBox>
-        <ResList footprintPerson={footprint.footprint} price={price.amount} footprintGroup={Math.ceil(footprint.footprint * param.result.at(6))}/>
+        {loading ? <Loader/> : 
+        <Wrapper>
+            <InfoBox>
+                  <Info>
+                      <h2>Flight details: <br/> {param.result.substring(0,3)} - {param.result.substring(3,6)}</h2>
+                      <p>Passenger number: {param.result.substring(7,10)}</p>
+                  </Info>
+            </InfoBox>
+            <ResList footprintPerson={footprint.footprint} price={price.amount} footprintGroup={Math.ceil(footprint.footprint * param.result.substring(7,10))}/>
+        </Wrapper>}
     </Container>
   )
 }

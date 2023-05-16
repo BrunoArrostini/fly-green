@@ -5,7 +5,7 @@ border: 1px solid gray;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 20px;
+padding: 15px;
 border-radius: 15px;
 background-color: white;
 margin-bottom: 15px;
@@ -38,18 +38,19 @@ box-shadow: rgba(0, 0, 0, 0.22) 0px 14px 28px,
 `;
 
 export const IconWrap = styled.div`
-
+color: #A2D9CE;
 `;
 
 export const TitleWrap = styled.div`
 display: flex;
 margin: 10px;
-
+justify-content: center;
+align-items: center;
 `;
 
 export const InfoWrap = styled.div`
 display: flex;
-justify-content: center;
+justify-content: space-around;
 align-items: center;
 `;
 

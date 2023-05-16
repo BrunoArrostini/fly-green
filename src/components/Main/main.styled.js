@@ -78,8 +78,8 @@ font-family: 'Bruno Ace SC', cursive;
 `;
 
 export const PassengerCounter = styled.select`
-margin-left: 145px;
-width: 40px;
+margin-left: 135px;
+width: 50px;
 margin-bottom: 20px;
 font-family: 'Bruno Ace SC', cursive;
 font-size: 10px;
