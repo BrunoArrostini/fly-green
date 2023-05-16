@@ -4,17 +4,21 @@ import { Wrapper, Container, Title, TripWrapper, OneWay, Roundtrip, Form, Depart
 import { useState, useEffect} from 'react'
 import codes from "../../airport.json"
 import { useFormik } from 'formik'
-//import { useNavigate} from 'react-router-dom'
-
+import { useNavigate} from 'react-router-dom'
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+import FlightLandIcon from '@mui/icons-material/FlightLand';
 
 const Main = () => {
 
   const [oneWayisHeld, setOneWayIsHeld] = useState(true);
   const [roundTripIsHeld, setRoundTripIsHeld] = useState(false);
-  //const [segment, setSegment] = useState(1);
+  const [dep, setDep] = useState([]);
+  const [des, setDes] = useState([]);
+  const [segment, setSegment] = useState(1);
   const [passeng, setPasseng] = useState([]);  
   
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
+
 
   const formik = useFormik({
     initialValues:{
@@ -23,7 +27,7 @@ const Main = () => {
       passnum:""
     },
     onSubmit: values=>{
-      console.log(values)
+      navigate("/results/" + values.departure + values.destination + values.passnum + segment)
     }
   })
 
@@ -34,15 +38,17 @@ const Main = () => {
 
   useEffect(()=>{
     setPasseng(pass);
-    // eslint-disable-next-line
+    setDep(codes);
+    setDes(codes);
+     //eslint-disable-next-line
   },[])
 
   const holdButton = () => {
     setOneWayIsHeld(oneWayisHeld => !oneWayisHeld);
     setRoundTripIsHeld(roundTripIsHeld => !roundTripIsHeld);
-    //setSegment(oneWayisHeld ? 0 : 1);
+    setSegment(oneWayisHeld ? 0 : 1);
   };
- 
+
   return (
     <Wrapper>
       <Container>
@@ -53,22 +59,22 @@ const Main = () => {
         </TripWrapper>
         <FormContainer>
            <Form onSubmit={formik.handleSubmit}>
-             <label htmlFor="departure">Departure</label>
+             <label htmlFor="departure">Departure <FlightTakeoffIcon /> </label>
              <Departure
              name="departure"
              value={formik.values.departure}
              onChange={formik.handleChange}
              >
-              {codes.map((code=> <option value={code.code}>{code.city} ({code.country})</option>))}
+              {dep.map((code=> <option value={code.code} key={code.code}>{code.city} ({code.country})</option>))}
              </Departure>  
              <br/>
-             <label htmlFor="destination">Destination</label>
+             <label htmlFor="destination">Destination <FlightLandIcon /> </label>
              <Destination
              name="destination"
              value={formik.values.destination}
              onChange={formik.handleChange}
              >
-              {codes.map((code=> <option value={code.code}>{code.city} ({code.country}) </option>))}
+              {des.map((code=> <option value={code.code} key={code.code}>{code.city} ({code.country}) </option>))}
              </Destination>
              <br/>
              <label htmlFor="passengers">Passengers nr.</label>
@@ -77,7 +83,7 @@ const Main = () => {
              value={formik.values.passnum}
              onChange={formik.handleChange}
              > 
-             {passeng.map((pas=> <option value={pas}>{pas}</option>))}
+             {passeng.map((pas=> <option value={pas} key={pas}>{pas}</option>))}
              </PassengerCounter>
              <br/>
              <Btn onSubmit={formik.handleSubmit}>Calculate Footprint</Btn>
