@@ -52,7 +52,7 @@ const Results = () => {
                       <p>Passenger number: {param.result.substring(7,10)}</p>
                   </Info>
             </InfoBox>
-            <ResList footprintPerson={footprint.footprint} price={price.amount} footprintGroup={Math.ceil(footprint.footprint * param.result.substring(7,10))}/>
+            <ResList footprintPerson={footprint.footprint} price={price.amount / 10} footprintGroup={Math.ceil(footprint.footprint * param.result.substring(7,10))}/>
         </Wrapper>}
     </Container>
   )

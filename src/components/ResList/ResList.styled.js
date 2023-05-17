@@ -54,3 +54,40 @@ justify-content: space-around;
 align-items: center;
 `;
 
+export const FootprintPass = styled.div`
+align-self: center;
+position: fixed;
+bottom: 10%;
+text-align: center;
+
+p{
+    color: #A2D9CE;
+    text-shadow: 0 2px 2px black;
+}
+`;
+
+export const FootprintTotal = styled.div`
+align-self: center;
+position: fixed;
+bottom: 10%;
+text-align: center;
+
+p{
+    color: #A2D9CE;
+    text-shadow: 0 2px 2px black;
+}  
+`;
+
+export const PriceInfo = styled.div`
+align-self: center;
+position: fixed;
+bottom: 10%;
+text-align: center;
+
+p{
+    color: #A2D9CE;
+    text-shadow: 0 2px 2px black;
+}  
+`;
+
+

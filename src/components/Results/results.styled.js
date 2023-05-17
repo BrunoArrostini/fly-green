@@ -10,10 +10,11 @@ min-height: 90vh;
 `;
 
 export const InfoBox = styled.div`
+align-self: center;
 display: flex;
 justify-content: end;
 border: 1px solid gray;
-width: 370.3125px;
+width: 100%;
 font-size: 10px;
 background-color: #A2D9CE;
 border-radius: 15px;
