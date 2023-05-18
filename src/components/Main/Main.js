@@ -7,6 +7,7 @@ import { useFormik } from 'formik'
 import { useNavigate} from 'react-router-dom'
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
+import airplane from "../../images/airplane-world.gif"
 
 const Main = () => {
 
@@ -51,6 +52,7 @@ const Main = () => {
 
   return (
     <Wrapper>
+      <img src={airplane} className="airplane" alt=''></img>
       <Container>
         <Title>Trip details</Title>
         <TripWrapper>

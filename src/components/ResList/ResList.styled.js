@@ -56,9 +56,13 @@ align-items: center;
 
 export const FootprintPass = styled.div`
 align-self: center;
-position: fixed;
-bottom: 10%;
+position: absolute;
+bottom: 0;
 text-align: center;
+display: flex;
+align-items: center;
+font-size: 14px;
+flex-direction: column;
 
 p{
     color: #A2D9CE;
@@ -69,8 +73,12 @@ p{
 export const FootprintTotal = styled.div`
 align-self: center;
 position: fixed;
-bottom: 10%;
+bottom: 0;
 text-align: center;
+display: flex;
+align-items: center;
+font-size: 14px;
+flex-direction: column;
 
 p{
     color: #A2D9CE;
@@ -81,8 +89,12 @@ p{
 export const PriceInfo = styled.div`
 align-self: center;
 position: fixed;
-bottom: 10%;
+bottom: 25px;
 text-align: center;
+display: flex;
+align-items: center;
+font-size: 14px;
+flex-direction: column;
 
 p{
     color: #A2D9CE;

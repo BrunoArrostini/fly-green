@@ -11,10 +11,12 @@
 
  header{
   position: sticky;
-  top: 5px;
+  top: 10px;
   left: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
  }
 
 header > p{
@@ -52,4 +54,23 @@ label{
 .no-held:hover{
     background-color: #A2D9CE;
     box-shadow: gray 0px 3px 4px;
+}
+
+.rafs{
+  width: 50px;
+  height: 50px;
+}
+
+.airplane{
+  width: 50px;
+  height: 70px;
+  position: absolute;
+  top: 50px;
+}
+
+footer{
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Bruno Ace SC', cursive;
+  background-color: rgb(243, 237, 237);
 }

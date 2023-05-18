@@ -4,6 +4,7 @@ import Co2Icon from '@mui/icons-material/Co2';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import PaidIcon from '@mui/icons-material/Paid';
+import rafs from "../../images/rafs.gif"
 
 const ResList = ({price, footprintPerson, footprintGroup}) => {
 
@@ -32,6 +33,7 @@ const ResList = ({price, footprintPerson, footprintGroup}) => {
         </Box>
         {isActiveEach && <FootprintPass>
               <p>Total flight footprint for one passenger</p>
+              <img src={rafs} className="rafs" alt=''></img>
               </FootprintPass>}
         <Box onMouseEnter={handleActiveTotal} onMouseLeave={handleActiveTotal}>
             <IconWrap> <AirplanemodeActiveIcon /> </IconWrap>
@@ -39,7 +41,8 @@ const ResList = ({price, footprintPerson, footprintGroup}) => {
             <InfoWrap> <p>{footprintGroup / 1000} Tones </p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap>
         </Box>
         {isActiveTotal && <FootprintTotal>
-              <p>Total flight footprint calculate on passenger number</p>
+              <p>Total flight footprint calculated on passenger number</p>
+              <img src={rafs} className="rafs" alt=''></img>
               </FootprintTotal>}
         <Box onMouseEnter={handleActivePrice} onMouseLeave={handleActivePrice}>
             <IconWrap> <PaidIcon /> </IconWrap>
@@ -48,6 +51,7 @@ const ResList = ({price, footprintPerson, footprintGroup}) => {
         </Box>
         {isPriceInfo && <PriceInfo>
               <p>Price is calculated approximately</p>
+              <img src={rafs} className="rafs" alt=''></img>
               </PriceInfo>}
     </Wrapper>
     
