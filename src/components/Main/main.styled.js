@@ -25,21 +25,7 @@ export const Title = styled.h1`
 font-size: 25px;
 text-align: center;
 font-family: 'Bruno Ace SC', cursive;
-`;
-
-export const TripWrapper = styled.div`
-display: flex;
-margin-top: 20px;
-width: 300px;
-margin-bottom: 20px;
-`;
-
-export const OneWay = styled.button`
-color: black;
-`;
-
-export const Roundtrip = styled.button`
-color: black;
+margin-bottom: 10px;
 `;
 
 export const FormContainer = styled.div`

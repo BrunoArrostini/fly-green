@@ -27,6 +27,7 @@ const ResList = ({price, footprintPerson, footprintGroup}) => {
   return (
     <Wrapper>
         <Box onMouseEnter={handleActive} onMouseLeave={handleActive}>
+          
             <IconWrap> <AirplanemodeActiveIcon /></IconWrap>
             <TitleWrap > <p>Footprint (passenger)</p> </TitleWrap>
             <InfoWrap> <p>{footprintPerson / 1000} Tones</p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap>

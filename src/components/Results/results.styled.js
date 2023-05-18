@@ -12,7 +12,7 @@ min-height: 90vh;
 export const InfoBox = styled.div`
 align-self: center;
 display: flex;
-justify-content: end;
+justify-content: space-around;
 border: 1px solid gray;
 width: 100%;
 font-size: 10px;

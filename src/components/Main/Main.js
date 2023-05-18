@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../App.css"
-import { Wrapper, Container, Title, TripWrapper, OneWay, Roundtrip, Form, Departure, Destination, PassengerCounter, FormContainer, Btn} from './main.styled' 
+import { Wrapper, Container, Title, Form, Departure, Destination, PassengerCounter, FormContainer, Btn} from './main.styled' 
 import { useState, useEffect} from 'react'
 import codes from "../../airport.json"
 import { useFormik } from 'formik'
@@ -11,11 +11,8 @@ import airplane from "../../images/airplane-world.gif"
 
 const Main = () => {
 
-  const [oneWayisHeld, setOneWayIsHeld] = useState(true);
-  const [roundTripIsHeld, setRoundTripIsHeld] = useState(false);
   const [dep, setDep] = useState([]);
   const [des, setDes] = useState([]);
-  const [segment, setSegment] = useState(1);
   const [passeng, setPasseng] = useState([]);  
   
   const navigate = useNavigate();
@@ -28,7 +25,7 @@ const Main = () => {
       passnum:""
     },
     onSubmit: values=>{
-      navigate("/results/" + values.departure + values.destination + segment + values.passnum)
+      navigate("/results/" + values.departure + values.destination + values.passnum)
     }
   })
 
@@ -44,21 +41,11 @@ const Main = () => {
      //eslint-disable-next-line
   },[])
 
-  const holdButton = () => {
-    setOneWayIsHeld(oneWayisHeld => !oneWayisHeld);
-    setRoundTripIsHeld(roundTripIsHeld => !roundTripIsHeld);
-    setSegment(oneWayisHeld ? 0 : 1);
-  };
-
   return (
     <Wrapper>
       <img src={airplane} className="airplane" alt=''></img>
       <Container>
         <Title>Trip details</Title>
-        <TripWrapper>
-          <OneWay onClick={holdButton} className={oneWayisHeld ? "held" : "no-held"}>One way</OneWay>
-          <Roundtrip onClick={holdButton} className={roundTripIsHeld ? "held" : "no-held"} >Roundtrip</Roundtrip>
-        </TripWrapper>
         <FormContainer>
            <Form onSubmit={formik.handleSubmit}>
              <label htmlFor="departure">Departure <FlightTakeoffIcon /> </label>

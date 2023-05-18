@@ -56,49 +56,64 @@ align-items: center;
 
 export const FootprintPass = styled.div`
 align-self: center;
-position: absolute;
-bottom: 0;
+position: fixed;
+bottom: 10px;
+width: 95%;
+height: 90px;
+background-color: white;
+border-radius: 15px;
+border: 2px solid #A2D9CE;
 text-align: center;
 display: flex;
 align-items: center;
 font-size: 14px;
 flex-direction: column;
+justify-content: center;
 
 p{
-    color: #A2D9CE;
-    text-shadow: 0 2px 2px black;
-}
+    color: gray;
+}  
 `;
 
 export const FootprintTotal = styled.div`
 align-self: center;
 position: fixed;
-bottom: 0;
+bottom: 10px;
+width: 95%;
+height: 90px;
+background-color: white;
+border-radius: 15px;
+border: 2px solid #A2D9CE;
 text-align: center;
 display: flex;
 align-items: center;
 font-size: 14px;
 flex-direction: column;
+justify-content: center;
 
 p{
-    color: #A2D9CE;
-    text-shadow: 0 2px 2px black;
+    color: gray;
 }  
 `;
 
 export const PriceInfo = styled.div`
 align-self: center;
 position: fixed;
-bottom: 25px;
+bottom: 10px;
+width: 95%;
+height: 90px;
+background-color: white;
+border-radius: 15px;
+border: 2px solid #A2D9CE;
 text-align: center;
 display: flex;
 align-items: center;
 font-size: 14px;
 flex-direction: column;
+justify-content: center;
 
 p{
-    color: #A2D9CE;
-    text-shadow: 0 2px 2px black;
+    color: gray;
 }  
 `;
 

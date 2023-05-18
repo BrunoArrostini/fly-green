@@ -5,15 +5,17 @@ import { useEffect, useState } from 'react'
 import ResList from '../ResList/ResList'
 import {Container, InfoBox, Info, Wrapper} from './results.styled'
 import Loader from "../Loader/Loader"
+import justice from "../../images/justice.gif"
+import {MdAirplaneTicket} from "react-icons/md"
 
 const Results = () => {
 
     const param = useParams();
     const [loading, setLoading] = useState(false);
     const [footprint, setFootprint] = useState([]);
-    const [price, setPrice] = useState([])
+    const [price, setPrice] = useState([]);
 
-    const APP_KEY = process.env.REACT_APP_API_KEY
+    const APP_KEY = process.env.REACT_APP_API_KEY;
     
     const fetchFootprint = async () => {
     try{
@@ -38,21 +40,24 @@ const Results = () => {
     }
 
     useEffect(()=>{
-    fetchFootprint(param.result);
+      fetchFootprint(param.result);
          //eslint-disable-next-line
     },[param.result])      
      
   return (
     <Container>
         {loading ? <Loader/> : 
+        
         <Wrapper>
+          <img src={justice} alt="" className='justice'></img>
             <InfoBox>
+                  <MdAirplaneTicket style={{fontSize:"70px"}}/>
                   <Info>
                       <h2>Flight details: <br/> {param.result.substring(0,3)} - {param.result.substring(3,6)}</h2>
-                      <p>Passenger number: {param.result.substring(7,10)}</p>
+                      <p>Passenger number: {param.result.substring(6,9)}</p>
                   </Info>
             </InfoBox>
-            <ResList footprintPerson={footprint.footprint} price={price.amount / 10} footprintGroup={Math.ceil(footprint.footprint * param.result.substring(7,10))}/>
+            <ResList footprintPerson={footprint.footprint} price={price.amount / 10} footprintGroup={Math.ceil(footprint.footprint * param.result.substring(6,9))}/>
         </Wrapper>}
     </Container>
   )
