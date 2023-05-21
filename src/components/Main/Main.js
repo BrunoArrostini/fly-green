@@ -9,6 +9,7 @@ import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 import airplane from "../../images/airplane-world.gif"
 
+
 const Main = () => {
 
   const [dep, setDep] = useState([]);
@@ -16,8 +17,7 @@ const Main = () => {
   const [passeng, setPasseng] = useState([]);  
   
   const navigate = useNavigate();
-
-
+ 
   const formik = useFormik({
     initialValues:{
       departure:"",
@@ -63,7 +63,7 @@ const Main = () => {
              value={formik.values.destination}
              onChange={formik.handleChange}
              >
-              {des.map((code=> <option value={code.code} key={code.code}>{code.city} ({code.country}) </option>))}
+              {des.map((code=> <option value={code.code} key={code.code}>{code.city} ({code.country})</option>))}
              </Destination>
              <br/>
              <label htmlFor="passengers">Passengers nr.</label>

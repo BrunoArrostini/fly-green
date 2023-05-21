@@ -15,18 +15,18 @@ cursor: pointer;
 font-size: 12px ;
             
 &:hover{
-    transform: scale(1.05);
-    border: 3px solid #A2D9CE ;
+   
+    border: 2px solid #A2D9CE ;
+    transition: 0.3s;
 }    
 
 &:active{
-    transform: scale(1.05);
+    
     border: 2px solid #A2D9CE ;
 }
 `;
 
 export const Wrapper = styled.div`
-z-index: 2;
 display: flex;
 flex-direction: column;
 border: 1px solid gray;
@@ -55,18 +55,9 @@ align-items: center;
 `;
 
 export const FootprintPass = styled.div`
-align-self: center;
-position: fixed;
-bottom: 10px;
-width: 95%;
-height: 90px;
-background-color: white;
-border-radius: 15px;
-border: 2px solid #A2D9CE;
 text-align: center;
 display: flex;
 align-items: center;
-font-size: 14px;
 flex-direction: column;
 justify-content: center;
 
@@ -76,45 +67,27 @@ p{
 `;
 
 export const FootprintTotal = styled.div`
-align-self: center;
-position: fixed;
-bottom: 10px;
-width: 95%;
-height: 90px;
-background-color: white;
-border-radius: 15px;
-border: 2px solid #A2D9CE;
 text-align: center;
 display: flex;
 align-items: center;
-font-size: 14px;
 flex-direction: column;
 justify-content: center;
 
 p{
     color: gray;
-}  
+} 
 `;
 
 export const PriceInfo = styled.div`
-align-self: center;
-position: fixed;
-bottom: 10px;
-width: 95%;
-height: 90px;
-background-color: white;
-border-radius: 15px;
-border: 2px solid #A2D9CE;
 text-align: center;
 display: flex;
 align-items: center;
-font-size: 14px;
 flex-direction: column;
 justify-content: center;
 
 p{
     color: gray;
-}  
+}
 `;
 
 

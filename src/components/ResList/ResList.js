@@ -27,33 +27,33 @@ const ResList = ({price, footprintPerson, footprintGroup}) => {
   return (
     <Wrapper>
         <Box onMouseEnter={handleActive} onMouseLeave={handleActive}>
-          
-            <IconWrap> <AirplanemodeActiveIcon /></IconWrap>
-            <TitleWrap > <p>Footprint (passenger)</p> </TitleWrap>
-            <InfoWrap> <p>{footprintPerson / 1000} Tones</p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap>
-        </Box>
-        {isActiveEach && <FootprintPass>
+            {isActiveEach ? <FootprintPass>
               <p>Total flight footprint for one passenger</p>
               <img src={rafs} className="rafs" alt=''></img>
-              </FootprintPass>}
+              </FootprintPass> : <>
+            <IconWrap> <AirplanemodeActiveIcon /></IconWrap>
+            <TitleWrap > <p>Footprint (passenger)</p> </TitleWrap>
+            <InfoWrap> <p>{footprintPerson / 1000} Tones</p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap></>}
+        </Box>
+        
         <Box onMouseEnter={handleActiveTotal} onMouseLeave={handleActiveTotal}>
+            {isActiveTotal ? <FootprintTotal>
+              <p>Footprint calculated on passenger number</p>
+              <img src={rafs} className="rafs" alt=''></img>
+              </FootprintTotal> : <> 
             <IconWrap> <AirplanemodeActiveIcon /> </IconWrap>
             <TitleWrap> <p>Footprint (total)</p> </TitleWrap>
-            <InfoWrap> <p>{footprintGroup / 1000} Tones </p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap>
+            <InfoWrap> <p>{footprintGroup / 1000} Tones </p> <Co2Icon style={{fontSize:"30px", color:"rgb(87, 86, 86)"}} /></InfoWrap></>}
         </Box>
-        {isActiveTotal && <FootprintTotal>
-              <p>Total flight footprint calculated on passenger number</p>
-              <img src={rafs} className="rafs" alt=''></img>
-              </FootprintTotal>}
         <Box onMouseEnter={handleActivePrice} onMouseLeave={handleActivePrice}>
-            <IconWrap> <PaidIcon /> </IconWrap>
-            <TitleWrap> <p>Price</p> </TitleWrap>
-            <InfoWrap> <p>{price}</p> <AttachMoneyIcon style={{fontSize:"20px", color:"rgb(87, 86, 86)"}}/></InfoWrap>
-        </Box>
-        {isPriceInfo && <PriceInfo>
-              <p>Price is calculated approximately</p>
+            {isPriceInfo ? <PriceInfo>
+              <p>Price for each passenger approximately</p>
               <img src={rafs} className="rafs" alt=''></img>
-              </PriceInfo>}
+              </PriceInfo> : <>
+            <IconWrap> <PaidIcon /> </IconWrap>
+            <TitleWrap> <p>Ticket price</p> </TitleWrap>
+            <InfoWrap> <p>{price}</p> <AttachMoneyIcon style={{fontSize:"20px", color:"rgb(87, 86, 86)"}}/></InfoWrap></>}
+        </Box>
     </Wrapper>
     
   )

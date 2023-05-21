@@ -1,12 +1,14 @@
 import React from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ResList from '../ResList/ResList'
-import {Container, InfoBox, Info, Wrapper} from './results.styled'
+import {Container, InfoBox, Info, Wrapper, BtnLearn} from './results.styled'
 import Loader from "../Loader/Loader"
 import justice from "../../images/justice.gif"
 import {MdAirplaneTicket} from "react-icons/md"
+import Compared from '../Compared/Compared'
+
 
 const Results = () => {
 
@@ -16,6 +18,11 @@ const Results = () => {
     const [price, setPrice] = useState([]);
 
     const APP_KEY = process.env.REACT_APP_API_KEY;
+    const navigate = useNavigate();
+
+    const handleButton = () => {
+      navigate("/compared/")
+    }
     
     const fetchFootprint = async () => {
     try{
@@ -47,7 +54,6 @@ const Results = () => {
   return (
     <Container>
         {loading ? <Loader/> : 
-        
         <Wrapper>
           <img src={justice} alt="" className='justice'></img>
             <InfoBox>
@@ -59,6 +65,7 @@ const Results = () => {
             </InfoBox>
             <ResList footprintPerson={footprint.footprint} price={price.amount / 10} footprintGroup={Math.ceil(footprint.footprint * param.result.substring(6,9))}/>
         </Wrapper>}
+        <BtnLearn onClick={handleButton}>Learn more</BtnLearn>
     </Container>
   )
 }

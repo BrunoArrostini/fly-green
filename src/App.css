@@ -72,7 +72,7 @@ label{
   width: 100px;
   height: 100px;
   position: absolute;
-  top: 50px;
+  top: 35px;
   align-self: center ;
 }
 
@@ -81,4 +81,9 @@ footer{
   font-size: 12px;
   font-family: 'Bruno Ace SC', cursive;
   background-color: rgb(243, 237, 237);
+  margin-top: 0;
+}
+
+.chart{
+  height: 200px;
 }
