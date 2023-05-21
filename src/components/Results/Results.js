@@ -1,13 +1,12 @@
 import React from 'react'
 import axios from 'axios'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import ResList from '../ResList/ResList'
 import {Container, InfoBox, Info, Wrapper, BtnLearn} from './results.styled'
 import Loader from "../Loader/Loader"
 import justice from "../../images/justice.gif"
 import {MdAirplaneTicket} from "react-icons/md"
-import Compared from '../Compared/Compared'
 
 
 const Results = () => {

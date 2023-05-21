@@ -41,7 +41,7 @@ const Compared = () => {
             </label>
           </div>
           {!isClicked ? <BtnLearn type="submit" onClick={showButton}>Confirm</BtnLearn> 
-          : <Box title={"Bus"} icon={<GiBus style={{fontSize:"70px"}}/>} text={"Bus emission are calculated as ? kg per passenger"} 
+          : <Box title={"Bus"} icon={<GiBus style={{fontSize:"30px"}}/>} text={"Bus emission are calculated as ? kg per passenger"} 
           result={"Emission with bus would be ? tones Co2" } image={bus} />}
           </FormWrapper>
           
