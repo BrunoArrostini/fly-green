@@ -81,7 +81,9 @@ footer{
   font-size: 12px;
   font-family: 'Bruno Ace SC', cursive;
   background-color: rgb(243, 237, 237);
-  margin-top: 0;
+  position: fixed;
+  bottom: 0;
+  left: 45%;
 }
 
 .chart{

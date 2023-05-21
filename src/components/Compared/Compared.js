@@ -5,6 +5,7 @@ import { Formik, Field, Form } from 'formik';
 import { BtnLearn } from '../Results/results.styled';
 import {GiBus} from "react-icons/gi"
 import bus from "../../images/bus.jpg.webp"
+import {useNavigate, useParams, useLocation } from 'react-router-dom';
 
 
 const Compared = () => {
@@ -14,10 +15,23 @@ const Compared = () => {
     const showButton = () => {
        isClicked ? setIsClicked(false) : setIsClicked(true)
     }
+
+    const navigate = useNavigate();
+    const param = useParams();
+    const location = useLocation();
+    
+
+    const each = `${location.state * 0.027}`
+    const total = Math.ceil(param.pass * each)
+
+    const trainRedirect = () => {
+      navigate("/train/" + each)
+    }
     
   return (
     <Container>
         <Wrapper>
+        <GiBus style={{fontSize:"50px", marginBottom:"20px"}}/>
         <Formik
       initialValues={{
         picked: '',
@@ -41,8 +55,9 @@ const Compared = () => {
             </label>
           </div>
           {!isClicked ? <BtnLearn type="submit" onClick={showButton}>Confirm</BtnLearn> 
-          : <Box title={"Bus"} icon={<GiBus style={{fontSize:"30px"}}/>} text={"Bus emission are calculated as ? kg per passenger"} 
-          result={"Emission with bus would be ? tones Co2" } image={bus} />}
+          : <Box title={"Bus"} text={"A regular bus produces 27g/km Co2 each passenger"} 
+          result={`Each passenger pollute ${each} Co2 kg for this trip`}
+          resultTot={`Total footprint for indicated passenger is ${total} Co2 kg`} image={bus} func={trainRedirect} sub={"Next"}/>}
           </FormWrapper>
           
         </Form>

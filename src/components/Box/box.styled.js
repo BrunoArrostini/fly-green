@@ -15,6 +15,10 @@ box-shadow: rgba(0, 0, 0, 0.22) 0px 4px 8px,
 cursor: pointer;
 font-size: 12px ;
    
+h2{
+    margin-bottom: 10px;
+}
+
 img{
     width: 220px;
     height: 150px;
@@ -22,7 +26,7 @@ img{
 }
 
 div{
-    margin-bottom: 5px;
+    margin-bottom: 11px;
 }
 
 p{
@@ -36,4 +40,7 @@ p{
 
 export const Container = styled.div`
 display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 `;

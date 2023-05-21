@@ -15,12 +15,13 @@ const Results = () => {
     const [loading, setLoading] = useState(false);
     const [footprint, setFootprint] = useState([]);
     const [price, setPrice] = useState([]);
-
+    const [km, setKm] = useState("");
+     
     const APP_KEY = process.env.REACT_APP_API_KEY;
-    const navigate = useNavigate();
+    const navigate = useNavigate([]);
 
     const handleButton = () => {
-      navigate("/compared/")
+      navigate("/compared/" + param.result.substring(6,9), {state:km})
     }
     
     const fetchFootprint = async () => {
@@ -36,6 +37,7 @@ const Results = () => {
         setLoading(false);
         console.log(infos)
         setFootprint(infos)
+        setKm(Math.ceil(res.data.footprint * 0.942))
         setPrice(prices)
     }
     catch(err){
@@ -48,7 +50,10 @@ const Results = () => {
     useEffect(()=>{
       fetchFootprint(param.result);
          //eslint-disable-next-line
-    },[param.result])      
+    },[param.result])  
+
+
+    console.log(km)
      
   return (
     <Container>
