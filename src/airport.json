@@ -1,9 +1,5 @@
 [ 
     {
-      
-      "country":"Select a city"
-    },
-    {
       "code": "AAA",
       "lat": "-17.3595",
       "lon": "-145.494",

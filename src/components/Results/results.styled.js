@@ -43,6 +43,7 @@ border: 1px solid gray;
 display: flex;
 align-self: center;
 padding: 15px;
+color: black;
 border-radius: 15px;
 background-color: white;
 margin-top: 15px;

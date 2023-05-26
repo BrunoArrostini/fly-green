@@ -1,31 +1,40 @@
 import React from 'react'
 import "../../App.css"
-import { Wrapper, Container, Title, Form, Departure, Destination, PassengerCounter, FormContainer, Btn} from './main.styled' 
+import { Wrapper, Container, Title, PassengerCounter, FormContainer, Btn} from './main.styled' 
 import { useState, useEffect} from 'react'
 import codes from "../../airport.json"
-import { useFormik } from 'formik'
+import { useFormik} from 'formik'
 import { useNavigate} from 'react-router-dom'
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 import airplane from "../../images/airplane-world.gif"
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import Stack from '@mui/material/Stack';
 
 
 const Main = () => {
 
-  const [dep, setDep] = useState([]);
-  const [des, setDes] = useState([]);
+
   const [passeng, setPasseng] = useState([]);  
-  
+
   const navigate = useNavigate();
+
+
+
+  const defaultProps = {
+    options: codes,
+    getOptionLabel: (option) => option.city ,
+  };
+  const [valueDep, setValueDep] = React.useState([]);
+  const [valueDes, setValueDes] = React.useState([]);
  
   const formik = useFormik({
     initialValues:{
-      departure:"",
-      destination:"",
       passnum:""
     },
     onSubmit: values=>{
-      navigate("/results/" + values.departure + values.destination + values.passnum)
+      navigate("/results/" + valueDep.code + valueDes.code + values.passnum)
     }
   })
 
@@ -36,8 +45,6 @@ const Main = () => {
 
   useEffect(()=>{
     setPasseng(pass);
-    setDep(codes);
-    setDes(codes);
      //eslint-disable-next-line
   },[])
 
@@ -47,24 +54,36 @@ const Main = () => {
       <Container>
         <Title>Trip details</Title>
         <FormContainer>
-           <Form onSubmit={formik.handleSubmit}>
+           <form onSubmit={formik.handleSubmit}>
              <label htmlFor="departure">Departure <FlightTakeoffIcon /> </label>
-             <Departure
-             name="departure"
-             value={formik.values.departure}
-             onChange={formik.handleChange}
-             >
-              {dep.map((code=> <option value={code.code} key={code.code}>{code.city} ({code.country})</option>))}
-             </Departure>  
+           <Stack>
+              <Autocomplete
+                {...defaultProps}
+                id="departure"
+                value={valueDep.code}
+                onChange={(event, newValue) => {
+                setValueDep(newValue);
+                }}
+               renderInput={(params) => (
+                    <TextField {...params} label="Choose departure" variant="standard" />
+                     )}
+              />
+            </Stack>
              <br/>
              <label htmlFor="destination">Destination <FlightLandIcon /> </label>
-             <Destination
-             name="destination"
-             value={formik.values.destination}
-             onChange={formik.handleChange}
-             >
-              {des.map((code=> <option value={code.code} key={code.code}>{code.city} ({code.country})</option>))}
-             </Destination>
+             <Stack>
+              <Autocomplete
+                {...defaultProps}
+                id="destination"
+                value={valueDes.code}
+                onChange={(event, newValue) => {
+                setValueDes(newValue);
+                }}
+               renderInput={(params) => (
+                    <TextField {...params} label="Choose destination" variant="standard" />
+                     )}
+              />
+            </Stack>    
              <br/>
              <label htmlFor="passengers">Passengers nr.</label>
              <PassengerCounter
@@ -76,7 +95,7 @@ const Main = () => {
              </PassengerCounter>
              <br/>
              <Btn onSubmit={formik.handleSubmit}>Calculate Footprint</Btn>
-           </Form>
+           </form>
         </FormContainer>
       </Container>
     </Wrapper>
