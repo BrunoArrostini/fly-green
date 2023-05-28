@@ -9,22 +9,38 @@ import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 import airplane from "../../images/airplane-world.gif"
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 
 
 const Main = () => {
 
+    codes.sort(function (a, b) {
+    if (a.city < b.city) {
+      return -1;
+    }
+    if (a.city > b.city) {
+      return 1;
+    }
+    return 0;
+    
+  });
 
   const [passeng, setPasseng] = useState([]);  
 
   const navigate = useNavigate();
 
-
+  const filterOptions = createFilterOptions({
+    matchFrom: "start",
+    ignoreCase: true,
+    trim: true,
+    limit: 3,
+    stringify: option => option.city,
+  });
 
   const defaultProps = {
     options: codes,
-    getOptionLabel: (option) => option.city ,
+    getOptionLabel: (option) => `${option.city} (${option.country})`,
   };
   const [valueDep, setValueDep] = React.useState([]);
   const [valueDes, setValueDes] = React.useState([]);
@@ -59,6 +75,7 @@ const Main = () => {
            <Stack>
               <Autocomplete
                 {...defaultProps}
+                filterOptions={filterOptions}
                 id="departure"
                 value={valueDep.code}
                 onChange={(event, newValue) => {
@@ -74,6 +91,7 @@ const Main = () => {
              <Stack>
               <Autocomplete
                 {...defaultProps}
+                filterOptions={filterOptions}
                 id="destination"
                 value={valueDes.code}
                 onChange={(event, newValue) => {
