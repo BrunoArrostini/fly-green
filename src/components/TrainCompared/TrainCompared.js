@@ -5,8 +5,7 @@ import { Formik, Field, Form } from 'formik';
 import { BtnLearn } from '../Results/results.styled';
 import train from "../../images/train.jpg"
 import {WiTrain} from "react-icons/wi"
-import {useParams} from 'react-router-dom';
-import {Link} from "react-router-dom"
+import {useParams, useNavigate} from 'react-router-dom';
 
 const TrainCompared = () => {
 
@@ -17,6 +16,12 @@ const TrainCompared = () => {
 
     const showButton = () => {
        isClicked ? setIsClicked(false) : setIsClicked(true)
+    }
+
+    const navigate = useNavigate();
+
+    const finalRedirect = () => {
+      navigate("/final/")
     }
     
   return (
@@ -47,7 +52,7 @@ const TrainCompared = () => {
           </div>
           {!isClicked ? <BtnLearn type="submit" onClick={showButton}>Confirm</BtnLearn> 
           : <Box title={"Train"} text={"Train emission per passenger is approximately 91g/km"} 
-          result={"If you've travelled by train single footprint"} resultTot={`Would have been : ${Tot} Co2 Kg`}  image={train} sub={<Link  style={{textDecoration:"none"}} to={"/"}>Home</Link>}/>}
+          result={"If you've travelled by train single footprint"} resultTot={`Would have been : ${Tot} Co2 Kg`} func={finalRedirect}  image={train} sub={"Next"}/>}
           </FormWrapper>
           
         </Form>

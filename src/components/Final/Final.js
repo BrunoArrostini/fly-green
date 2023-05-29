@@ -1,11 +1,17 @@
 import React from 'react'
 import Chart from '../Chart'
+import { Container, Title, SubText, View } from './final.styled'
+import BasicGrid from '../Grid'
 
 const Final = () => {
   return (
-    <div style={{display:"flex", justifyContent:"center", marginTop:"100px"}}>
+    <Container>
+        <Title></Title>
         <Chart/>
-    </div>
+        <SubText>This Pie chart shows the companies that polluted more in 2022</SubText>
+        <View></View>
+        <BasicGrid/>
+    </Container>
   )
 }
 
