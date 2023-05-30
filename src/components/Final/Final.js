@@ -1,7 +1,7 @@
 import React from 'react'
-import Chart from '../Chart'
 import { Container, Title, SubText, View } from './final.styled'
 import BasicGrid from '../Grid'
+import Chart from '../Chart'
 
 const Final = () => {
   return (

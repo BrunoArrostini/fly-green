@@ -16,7 +16,7 @@ function Chart() {
             visible: true,
             reverse: true
         }} // eslint-disable-next-line 
-        enableSmartLabels={true} title="Airline companies emmision pie" enableBorderOnMouseMove={false} enableAnimation={true} load={load.bind(this)} tooltip={{ enable: true, format: `<b>${point.x}</b><br/>Emission per passenger: tones <b>${point.y}</b>`}}>
+        enableSmartLabels={true} title="Airline companies emmision pie" enableBorderOnMouseMove={false} enableAnimation={true} load={load.bind(this)} >
                     <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]}/>
                     <AccumulationSeriesCollectionDirective>
                         <AccumulationSeriesDirective dataSource={data1} xName='x' yName='y' innerRadius='20%' tooltipMappingName='r' dataLabel={{
