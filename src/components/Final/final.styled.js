@@ -5,14 +5,16 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+overflow-y: scroll;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
 padding: 60px;
+text-align: center;
 `;
 
 export const SubText = styled.p`
-padding: 40px;
+padding: 25px;
 text-align: center;
 font-size: 11px;
 `;

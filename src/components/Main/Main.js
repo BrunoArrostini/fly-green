@@ -34,7 +34,7 @@ const Main = () => {
     matchFrom: "start",
     ignoreCase: true,
     trim: true,
-    limit: 3,
+    limit: 1,
     stringify: option => option.city,
   });
 
@@ -48,6 +48,16 @@ const Main = () => {
   const formik = useFormik({
     initialValues:{
       passnum:""
+    },
+    validate:values => {
+      const errors = {};
+      if (!values.passnum) {
+        errors.passnum = "Required";
+      }
+      if (errors.passnum ==="Required"){
+        alert("please insert passengers number")
+      }
+      return errors;
     },
     onSubmit: values=>{
       navigate("/results/" + valueDep.code + valueDes.code + values.passnum)
@@ -109,7 +119,7 @@ const Main = () => {
              value={formik.values.passnum}
              onChange={formik.handleChange}
              > 
-             {passeng.map((pas=> <option value={pas} key={pas}>{pas}</option>))}
+             {passeng.map((pas=> <option value={pas} key={pas} required>{pas}</option>))}
              </PassengerCounter>
              <br/>
              <Btn onSubmit={formik.handleSubmit}>Calculate Footprint</Btn>

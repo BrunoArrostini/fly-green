@@ -1,4 +1,4 @@
-[ 
+[
     {
       "code": "AAA",
       "lat": "-17.3595",
@@ -2958,26 +2958,6 @@
       "icao": "KAPA",
       "direct_flights": "0",
       "carriers": "0"
-    },
-    {
-      "code": "APF",
-      "lat": "26.1483",
-      "lon": "-81.7745",
-      "name": "Naples Municipal Airport",
-      "city": "Naples",
-      "state": "Florida",
-      "country": "United States",
-      "woeid": "12521078",
-      "tz": "America\/New_York",
-      "phone": "",
-      "type": "Airports",
-      "email": "",
-      "url": "",
-      "runway_length": "5000",
-      "elev": "9",
-      "icao": "KAPF",
-      "direct_flights": "2",
-      "carriers": "1"
     },
     {
       "code": "APK",
@@ -27104,9 +27084,9 @@
       "lat": "68.7075",
       "lon": "-52.8069",
       "name": "Auisiait Airport",
-      "city": "Aasiaat",
+      "city": "",
       "state": "Vestgronland",
-      "country": "Greenland",
+      "country": "Type in a city...",
       "woeid": "12523840",
       "tz": "America\/Godthab",
       "phone": "",
