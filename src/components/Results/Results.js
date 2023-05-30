@@ -37,7 +37,7 @@ const Results = () => {
         setLoading(false);
         console.log(infos)
         setFootprint(infos)
-        setKm(Math.ceil(res.data.footprint * 0.942))
+        setKm(Math.ceil(res.data.footprint / 0.285))
         setPrice(prices)
     }
     catch(err){
@@ -51,9 +51,6 @@ const Results = () => {
       fetchFootprint(param.result);
          //eslint-disable-next-line
     },[param.result])  
-
-
-    console.log(km)
      
   return (
     <Container>

@@ -6,6 +6,7 @@ import { BtnLearn } from '../Results/results.styled';
 import {GiBus} from "react-icons/gi"
 import bus from "../../images/bus.jpg.webp"
 import {useNavigate, useParams, useLocation } from 'react-router-dom';
+import BarChart from '../Charts/BarChart';
 
 
 const Compared = () => {
@@ -21,7 +22,7 @@ const Compared = () => {
     const location = useLocation();
     
 
-    const each = `${location.state * 0.027}`
+    const each = Math.ceil(`${location.state * 0.027}`)
     const total = Math.ceil(param.pass * each)
 
     const trainRedirect = () => {
@@ -30,6 +31,7 @@ const Compared = () => {
     
   return (
     <Container>
+       {!isClicked ? <>
         <Wrapper>
         <GiBus style={{fontSize:"50px", marginBottom:"20px"}}/>
         <Formik
@@ -41,7 +43,7 @@ const Compared = () => {
       }}
     >
       {({ values }) => (
-        <Form >
+         <Form >
           <FormWrapper>
           <div id="my-radio-group">In your opinion, <br/>Could a bus pollute more?</div>
           <div role="group" aria-labelledby="my-radio-group">
@@ -53,17 +55,18 @@ const Compared = () => {
               <Field type="radio" name="picked" value="no" required/>
               No
             </label>
-          </div>
-          {!isClicked ? <BtnLearn type="submit" onClick={showButton}>Confirm</BtnLearn> 
-          : <Box title={"Bus"} text={"A regular bus produces 27g/km Co2 each passenger"} 
-          result={`Each passenger pollute ${each} Co2 kg for this trip`}
-          resultTot={`Total footprint for indicated passenger is ${total} Co2 kg`} image={bus} func={trainRedirect} sub={"Next"}/>}
+          </div> 
           </FormWrapper>
-          
         </Form>
       )}
     </Formik>
         </Wrapper>
+        <BtnLearn type="submit" onClick={showButton}>Confirm</BtnLearn> 
+        </>
+          : <Box title={"Bus"} text={"A bus produces 27gkm Co2 per passenger"} 
+          result={`Single passenger trip emmission: ${each} Co2 kg`}
+          resultTot={`Total footprint for this trip: ${total} Co2 kg`} image={bus} func={trainRedirect} sub={"Next"} 
+          chart={<BarChart label1={"Airplane"} label2={"Bus"} data1={`${location.state * 0.285}`} data2={each}/>}/>}
     </Container>
   )
 }

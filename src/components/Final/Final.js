@@ -1,16 +1,16 @@
 import React from 'react'
 import { Container, Title, SubText } from './final.styled'
-import BasicGrid from '../Grid'
+import BasicGrid from '../Charts/Grid'
 import { BtnLearn } from '../Results/results.styled'
 import { Link } from 'react-router-dom'
-import Chart from '../Chart'
+import Chart from '../Charts/Chart'
 import rafs from "../../images/rafs.gif"
 
 const Final = () => {
   return (
     <Container>
         <img src={rafs} alt="" style={{width:"100px"}}></img>
-        <Title>Airline companies emissions</Title>
+        <Title>Airline companies emissions in 2022</Title>
         <Chart/>
         <SubText>Type on Pie chart to see emisisons</SubText>
         <Title>Overview</Title>
@@ -18,7 +18,7 @@ const Final = () => {
         <SubText>This list shows which destination countries pollute less, <br/>
         Romania is on the top with 59 tones
         </SubText>
-        <BtnLearn style={{marginBottom:"10px"}}><Link style={{textDecoration:"none", color:"black"}} to={"/"}>Home</Link></BtnLearn>
+        <Link style={{textDecoration:"none", color:"black"}} to={"/"}><BtnLearn style={{marginBottom:"10px"}}>Home</BtnLearn></Link>
     </Container>
   )
 }

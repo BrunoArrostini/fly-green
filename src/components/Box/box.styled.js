@@ -27,6 +27,7 @@ img{
 
 div{
     margin-bottom: 11px;
+    align-items: flex-start;
 }
 
 p{
@@ -43,4 +44,5 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+width: 320px;
 `;

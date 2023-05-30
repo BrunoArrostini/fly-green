@@ -6,9 +6,9 @@ import { BtnLearn } from '../Results/results.styled';
 import train from "../../images/train.jpg"
 import {WiTrain} from "react-icons/wi"
 import {useParams, useNavigate} from 'react-router-dom';
+import BarChart from '../Charts/BarChart';
 
 const TrainCompared = () => {
-
     const param = useParams();
     const Tot = Math.ceil(param.each * 3.37)
 
@@ -26,6 +26,8 @@ const TrainCompared = () => {
     
   return (
     <Container>
+       {!isClicked ? 
+       <>
         <Wrapper>
         <WiTrain style={{fontSize:"50px", marginBottom:"20px"}}/>
         <Formik
@@ -50,15 +52,16 @@ const TrainCompared = () => {
               No
             </label>
           </div>
-          {!isClicked ? <BtnLearn type="submit" onClick={showButton}>Confirm</BtnLearn> 
-          : <Box title={"Train"} text={"Train emission per passenger is approximately 91g/km"} 
-          result={"If you've travelled by train single footprint"} resultTot={`Would have been : ${Tot} Co2 Kg`} func={finalRedirect}  image={train} sub={"Next"}/>}
+          <BtnLearn type="submit" onClick={showButton}>Confirm</BtnLearn> 
           </FormWrapper>
-          
         </Form>
       )}
     </Formik>
         </Wrapper>
+        </>
+        : <Box title={"Train"} text={"Train emission per passenger is 91g/km"} 
+        result={"If you've travelled by train single footprint"} resultTot={`Would have been : ${Tot} Co2 Kg`} func={finalRedirect}  image={train} sub={"Next"}
+        chart={<BarChart label1={"Airplane"} label2={"Train"} data1={`${param.each * 0.285}`} data2={param.each * 0.091}/>}/>}
     </Container>
   )
 }

@@ -11,7 +11,7 @@ import airplane from "../../images/airplane-world.gif"
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
-
+import {Helmet} from "react-helmet-async"
 
 const Main = () => {
 
@@ -75,6 +75,29 @@ const Main = () => {
   },[])
 
   return (
+    <>
+    <Helmet>
+      <title>Feel Veg</title>
+      <link rel="icon" type="image/png" href="../../../public/favicon.ico" sizes="16x16" />
+      <meta name='description' content='Flights Co2 emissions' />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="title" key="title" content="Fly green" />
+      <meta property="og:title" key="og:title" content="Fly green" />
+      <meta property="og:locale" key="og:locale" content="en_US" />
+      <meta charSet="utf-8" />
+      <meta property="og:type" key="og:type" content="website" />
+      <meta
+        property="og:description"
+        key="og:description"
+        content="Flights Co2 emissions"
+      />
+      <meta
+        property="og:image"
+        key="og:image"
+        content={airplane}
+      />   
+   </Helmet> 
     <Wrapper>
       <img src={airplane} className="airplane" alt=''></img>
       <Container>
@@ -127,6 +150,7 @@ const Main = () => {
         </FormContainer>
       </Container>
     </Wrapper>
+    </>
   )
 }
 
