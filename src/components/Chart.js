@@ -15,7 +15,8 @@ function Chart() {
                 <AccumulationChartComponent  style={{width:"350px"}} id='pie-chart'  legendSettings={{
             visible: true,
             reverse: true
-        }} enableSmartLabels={true} title="Airline companies emmision pie" enableBorderOnMouseMove={false} enableAnimation={true} load={load.bind(this)} tooltip={{ enable: true, format: '<b>${point.x}</b><br/>Emission per passenger: tones <b>${point.y} </b>' }}>
+        }} // eslint-disable-next-line 
+        enableSmartLabels={true} title="Airline companies emmision pie" enableBorderOnMouseMove={false} enableAnimation={true} load={load.bind(this)} tooltip={{ enable: true, format: `<b>${point.x}</b><br/>Emission per passenger: tones <b>${point.y}</b>`}}>
                     <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]}/>
                     <AccumulationSeriesCollectionDirective>
                         <AccumulationSeriesDirective dataSource={data1} xName='x' yName='y' innerRadius='20%' tooltipMappingName='r' dataLabel={{
@@ -33,8 +34,7 @@ function Chart() {
     function load(args) {
         let selectedTheme = window.location.hash.split('/')[1];
         selectedTheme = selectedTheme ? selectedTheme : 'Material';
-        args.accumulation.theme = (selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).
-            replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
+        args.accumulation.theme = (selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark").replace(/contrast/i, 'Contrast');
     }
     ;
 }
