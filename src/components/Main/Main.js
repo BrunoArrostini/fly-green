@@ -15,17 +15,6 @@ import {Helmet} from "react-helmet-async"
 
 const Main = () => {
 
-    codes.sort(function (a, b) {
-    if (a.city < b.city) {
-      return -1;
-    }
-    if (a.city > b.city) {
-      return 1;
-    }
-    return 0;
-    
-  });
-
   const [passeng, setPasseng] = useState([]);  
 
   const navigate = useNavigate();
@@ -34,7 +23,7 @@ const Main = () => {
     matchFrom: "start",
     ignoreCase: true,
     trim: true,
-    limit: 1,
+    limit: 10,
     stringify: option => option.city,
   });
 

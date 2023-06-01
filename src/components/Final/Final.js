@@ -15,7 +15,7 @@ const Final = () => {
         <SubText>Type on Pie chart to see emisisons</SubText>
         <Title>Overview</Title>
         <BasicGrid/>
-        <SubText>This list shows which destination countries pollute less, <br/>
+        <SubText>This list shows which destination pollute less, <br/>
         Romania is on the top with 59 tones
         </SubText>
         <Link style={{textDecoration:"none", color:"black"}} to={"/"}><BtnLearn style={{marginBottom:"10px"}}>Home</BtnLearn></Link>

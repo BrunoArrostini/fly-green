@@ -26,7 +26,7 @@ const rows = [
 
 export default function BasicGrid() {
   return (
-    <TableContainer component={Paper} sx={{backgroundColor: "rgb(243, 237, 237)", maxWidth: 350, borderRadius: "15px", marginBottom:"30px",
+    <TableContainer component={Paper} sx={{backgroundColor: "rgb(243, 237, 237)", maxWidth: 380, borderRadius: "15px", marginBottom:"30px",
     height:"350px", overflowY:"scroll", border:"1px solid #A2D9CE", boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px"}}>
       <Table sx={{backgroundColor: "white" }} aria-label="simple table">
         <TableHead>
