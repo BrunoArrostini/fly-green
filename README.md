@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Fly green
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview 📖
+**Fly green** is a single page app based on flight footprint.
 
-In the project directory, you can run:
+The app is structured in different sections:
 
-### `npm start`
+* Main section where you can choose a departure and a destination city.
+In addition you can select pass number.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Result section where you can find out single pass footprint, total fooprint and ticket price.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Compared sections where are compared bus and train emissions compared to airplane ones.
 
-### `npm test`
+* Final section includes airlines emissions chart and destination countries grid
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features 📝
 
-### `npm run build`
+The app has been created with React.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I implemented:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **React Router** for the paths, that allowed me to keep the status of a SAP.
+* **React Icons** for the icons.
+* **Axios** to optimize Api requests.
+* **React Hooks** as UseState, UseEffect, UseNavigate, useParams to manage the state and perform a better app.
+* **Material UI** for components like Autocomplete and list.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Conditional rendering has been used to display the survey or compared in Compared section.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Link 🔗
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can try the app clicking on airplane:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://flygreen.netlify.app"><img src="src/images/rafs.gif"></a>
