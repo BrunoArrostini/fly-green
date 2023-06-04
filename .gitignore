@@ -3,9 +3,5 @@
 # dependencies
 /node_modules
 .env
-<<<<<<< HEAD
-build/
-=======
 
-build/
->>>>>>> 14071230ac5f84cf8315e6e2ff1e6c27c3d59034
+/build
