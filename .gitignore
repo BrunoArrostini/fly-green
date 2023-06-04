@@ -6,3 +6,4 @@
 
 # Ignore the build directory
 /dist
+/build
