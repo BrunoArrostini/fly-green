@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container, Wrapper, FormWrapper } from './compared.styled'
-import  Box  from '../Box/Box'
+import  Box  from '../../components/Box/Box'
 import { Formik, Field, Form } from 'formik';
 import { BtnLearn } from '../Results/results.styled';
 import {GiBus} from "react-icons/gi"
 import bus from "../../images/bus.jpg.webp"
 import {useNavigate, useParams, useLocation } from 'react-router-dom';
-import BarChart from '../Charts/BarChart';
+import BarChart from '../../components/Charts/BarChart';
 
 
 const Compared = () => {

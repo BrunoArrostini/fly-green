@@ -1,5 +1,5 @@
 import './App.css';
-import Pages from './components/Pages';
+import Pages from './Pages/Pages';
 import {Link} from "react-router-dom"
 import {HelmetProvider} from "react-helmet-async"
 

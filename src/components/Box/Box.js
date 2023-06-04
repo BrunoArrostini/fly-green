@@ -1,6 +1,6 @@
 import React from 'react'
 import { BoxInfo, Container } from './box.styled'
-import { BtnLearn } from '../Results/results.styled'
+import { BtnLearn } from '../../Pages/Results/results.styled'
 
 const Box = ({title, text, result, image, func, resultTot, sub, chart}) => {
   return (

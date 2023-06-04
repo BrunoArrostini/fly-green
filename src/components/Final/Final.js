@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container, Title, SubText } from './final.styled'
-import BasicGrid from '../Charts/Grid'
+import BasicGrid from '../../components/Charts/Grid'
 import { BtnLearn } from '../Results/results.styled'
 import { Link } from 'react-router-dom'
-import Chart from '../Charts/Chart'
+import Chart from '../../components/Charts/Chart'
 import rafs from "../../images/rafs.gif"
 
 const Final = () => {
